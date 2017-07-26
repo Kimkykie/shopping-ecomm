@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .valign-wrapper.row
+    .valign.col.s12.m6.offset-m3
+      .card-panel.green.accent-3.center-align(class={ hide: noMessages === true })= successMsg
+  .container
+    - for (var i = 0; i < products.length; i+=3 )
+      .row
+        - for (var j = i; j < 3+i; j++ )
+          .col.s12.m4.l4
+            .card
+              .card-image
+                img.responsive-img(src= products[j].imagePath)
+                |               
+                span.card-title= products[j].title  
+              |             
+              .card-content
+                p= products[j].description
+              |             
+              .card-action
+                div.clearfix
+                  div.price.left #{`$${products[j].price}`}
+                  div.right
+                    a.waves-effect.waves-light.btn(href='/add-to-cart/'+ products[j]._id) BUY  

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .container
+    .row
+      each product in products
+        .col.s12.m4.l4
+          .card
+            .card-image
+              img.responsive-img(src='http://www.billboard.com/files/styles/article_main_image/public/media/19-beyonce-lemonade-screenshot-2016-billboard-650.jpg')
+              |               
+              span.card-title= product.title
+            |             
+            .card-content
+              p
+                | I am a very simple card. I am good at containing small bits of information.
+                | I am convenient because I require little markup to use effectively.
+            |             
+            .card-action
+              div.clearfix
+                div.price.left $12
+                div.right
+                  a.waves-effect.waves-light.btn BUY
+        
+    

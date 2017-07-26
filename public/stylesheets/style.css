@@ -1,0 +1,61 @@
+
+.price{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.clearfix:before,
+.clearfix:after {
+        display: table;
+        content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+label.active{
+  font-size: 18px;
+}
+
+span.badge{
+  color: white;
+  background-color: rgb(238, 26, 154);
+}
+
+.cart span{
+  margin-left: 7px;
+}
+
+.cart .dropdown-button{
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 7px;
+  text-transform: none;
+  font-weight: bold;
+  padding: 0 4px 0 4px;
+  float: right;
+}
+
+/*.cart .price{
+  padding: 6px 6px 12px 6px;
+  background-color: #26a69a;
+  border-radius: 3px;
+  color: white;
+}*/
+
+.cart .badge{
+  position: relative;
+  top: 6px;
+}
+
+.cart i{
+  position: relative;
+  top: 3px;
+}
+
+/* label focus color */
+  .input-field input[type=text] + label {
+    color: rgb(170, 59, 59) !important;
+    font-size: 14px !important;
+}

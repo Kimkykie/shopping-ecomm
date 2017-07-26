@@ -1,0 +1,32 @@
+extends layout
+
+block content
+   .valign-wrapper
+     .valign(style='width: 100%')
+       .container
+         .row
+           .col.s12.m6.offset-m3
+             .card
+               .card-content
+                 h2.black-text.center-align CHECKOUT
+                 h5 #{`Total: $${total}`}
+                 div#charge-error.card-panel(class={ hide: noError === true })= errMsg
+                 form(action="/checkout" id="checkout-form" method="post" enctype='application/x-www-form-urlencoded')
+                   .row
+                     .input-field.col.s12
+                       input#name(placeholder='Name', type='text', name='name', required='')
+                       label(for='name') Name
+                   .row
+                     .input-field.col.s12
+                       input#address(placeholder='Address', type='text', name='address', required='')
+                       label(for='address') Address
+                   .row
+                     #card-element
+                       label(for='card-element') Card
+                   .card-action.center-align
+                     input.btn(type='submit', value='BUY NOW')
+                       
+                       
+   script(type='text/javascript' src='https://js.stripe.com/v3/')
+   script(type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js')
+   script(type='text/javascript' src='/javascripts/checkout.js')

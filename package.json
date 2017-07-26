@@ -1,0 +1,36 @@
+{
+  "name": "shopping-ecomm",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "~1.17.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "~1.4.3",
+    "csurf": "^1.9.0",
+    "debug": "~2.6.3",
+    "dotenv": "^4.0.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "express": "~4.15.2",
+    "express-session": "^1.15.3",
+    "express-validator": "^3.2.1",
+    "mongoose": "^4.11.3",
+    "morgan": "~1.8.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2",
+    "stripe": "^4.23.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-rallycoding": "^3.2.0"
+  }
+}

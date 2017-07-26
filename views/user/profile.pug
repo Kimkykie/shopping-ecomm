@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  .valign-wrapper(style='width:100%;position: absolute;')
+    .valign(style='width:100%;')
+      .container
+        .row
+          .col.m6.offset-m3
+            h1 User Profile
+            hr
+            h5 My Orders
+            each order in orders
+              .card
+                .card-stacked
+                  ul.collection
+                    each one_order in order.items
+                      .card-content
+                        li.collection-item #{`${one_order.item.title} | ${one_order.qty} Units`} 
+                          span.badge.right-align #{`$${one_order.price}`}
+                  .card-content
+                    strong #{`Total price: $${order.cart.totalPrice}`}
+              
+    

@@ -1,0 +1,37 @@
+extends layout
+
+block content    
+  .valign-wrapper(style='width:100%;position: absolute;')
+    .valign(style='width:100%;')
+      .container
+        .row
+          .col.s12.m6.offset-m3
+            .card.cart
+              if Object.keys(products).length >= 1
+                ul
+                  each product in products
+                    .card-content
+                      span.badge.right-align= product.qty
+                      strong= product.item.title
+                      ul#cart-option.dropdown-content
+                        li
+                          a(href='/reduce/'+ product.item._id) Reduce by 1
+                          a(href='/remove/'+ product.item._id) Remove all
+                      a.dropdown-button.btn(type='button', data-activates='cart-option', data-beloworigin='true')
+                        | Action
+                        i.material-icons arrow_drop_down
+                      p.price #{`$${product.price}`}
+                  .card-content
+                    strong #{`Total: $${totalPrice}`}
+                  hr  
+                  .card-content
+                    a.waves-effect.waves-light.btn(href='/checkout') CHECKOUT
+              else 
+                 
+                .card-content
+                  h4 No Items In Cart
+                
+              
+      
+  
+       

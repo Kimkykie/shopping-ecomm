@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  .valign-wrapper(style='width:100%;height:100%;position: absolute;')
+    .valign(style='width:100%;')
+      .container
+        .row
+          .col.s12.m6.offset-m3
+            .card
+              .card-content
+                span.card-title.black-text.center-align Sign Up
+                - if (hasErrors)
+                  each message in messages
+                    .card-panel.red.accent-2= message
+
+                form(action="/user/signup" method="post" enctype='application/x-www-form-urlencoded')
+                  .row
+                    .input-field.col.s12
+                      input#email(placeholder='you@mail.com', type='text' name='email')
+                      label.active(for='email') Email
+                  .row
+                    .input-field.col.s12
+                      input#password(placeholder='Password', type='password' name='password')
+                      label.active(for='password') Password
+                  .input-field.col.s12
+                    input(type="hidden" name="_csrf" value= csrfToken)
+                  .card-action.center-align
+                    input.btn(type='submit', value='Sign Up')
+            
